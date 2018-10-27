@@ -1,0 +1,22 @@
+{
+  "name": "bookworm",
+  "version": "1.0.0",
+  "description": "bookkeeping website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel ./src/index.html"
+  },
+  "author": "Shahab  Uddin",
+  "license": "ISC",
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "parcel-bundler": "^1.10.3",
+    "reactstrap": "^6.5.0"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0"
+  }
+}
