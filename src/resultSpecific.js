@@ -4,16 +4,7 @@ import { Link } from "@reach/router";
 class ResultSpecific extends React.Component {
   constructor(props) {
     super(props);
-    //this.state = { MovieInfo: this.props.MovieInfo };
-    console.log(this.props.movieInfo);
   }
-  /*
-  componentDidMount() {
-    this.setState({ MovieInfo: this.props.MovieInfo });
-  }
-  /*componentDidUpdate() {
-    this.setState({ MovieInfo: this.props.MovieInfo });
-  }*/
 
   render() {
     return (
@@ -35,9 +26,5 @@ class ResultSpecific extends React.Component {
     );
   }
 }
-/*
-ResultSpecific.defaultProps = {
-  MovieInfo: { Title: "Dummy Title", Year: "1996", Poster: "dummy.jpg" }
-};
-*/
+
 export default ResultSpecific;

@@ -1,34 +1,29 @@
-import React from "react";
+import React, { Component } from "react";
 import { render } from "react-dom";
 import ResultSpecific from "./resultSpecific";
-import APICONTEXT from "./APICONTEXT";
+import redux from "react-redux";
+import store from "./store";
+import { connect } from "react-redux";
+
 class SearchResults extends React.Component {
-  componentDidMount() {
-    //  console.log("rsearch result mountedh");
-    //console.log(this.context);
-  }
+  componentDidMount() {}
 
   render() {
-    return (
-      <APICONTEXT.Consumer>
-        {context => {
-          if (context.movieList != null) {
-            let movieList = context.movieList.Search;
-            //       console.log(movieList);
-            return (
-              <div className="row">
-                <div className="col-sm-12" id="searchResults">
-                  {movieList.map(movie => (
-                    <ResultSpecific movieInfo={movie} key={movie.imdb} />
-                  ))}
-                </div>
-              </div>
-            );
-          } else return <p>Loading</p>;
-        }}
-      </APICONTEXT.Consumer>
-    );
+    if (this.props.movieList != null) {
+      let movieList = this.props.movieList.Search;
+
+      return (
+        <div className="row">
+          <div className="col-sm-12" id="searchResults">
+            {movieList.map(movie => (
+              <ResultSpecific movieInfo={movie} key={movie.imdb} />
+            ))}
+          </div>
+        </div>
+      );
+    } else return <p>Loading</p>;
   }
 }
-
-export default SearchResults;
+const mapStateToProps = ({ movieList }) => ({ movieList });
+export default connect(mapStateToProps)(SearchResults);
+//export default SearchResults;
